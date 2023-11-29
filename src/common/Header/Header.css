@@ -1,0 +1,28 @@
+
+
+.HeaderDessign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Nova Square';
+
+
+    background-color: gray;
+    min-height: 6em;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+
+.HeaderDessign nav{
+    display: flex;
+    gap: 3em;
+    flex-grow: 1;
+}
+
+
+.HeaderDessign .SearchFilmBarDessign {
+    flex-grow: 1;
+    max-width: 40em;
+}
