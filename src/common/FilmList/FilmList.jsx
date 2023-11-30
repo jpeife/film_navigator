@@ -13,10 +13,8 @@ export const FilmList = ({ films }) => {
                         key={film.id}
                         filmName={film.title}
                         srcImage={urlImgage(film.poster_path)}
+                        filmOverview={film.overview}
                     />
-
-
-
 
                 })
             }
