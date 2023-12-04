@@ -16,3 +16,23 @@ export const getLatestFilms = async () => {
     return await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${APIKEY}`);
 
 }
+
+
+export const getFilm = async (filmId) => {
+
+    return await axios.get(`https://api.themoviedb.org/3/movie/${filmId}?api_key=${APIKEY}`)
+
+
+}
+
+
+export const getFilmImages = async (filmId) => {
+
+    return await axios.get(`https://api.themoviedb.org/3/movie/${filmId}/images?api_key=${APIKEY}`)
+
+}
+
+export const getFilmVideos = async (filmId) => {
+
+    return await axios.get(`https://api.themoviedb.org/3/movie/${filmId}/videos?api_key=${APIKEY}`)
+}

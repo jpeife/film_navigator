@@ -1,10 +1,17 @@
 
+import { Link, useNavigate } from "react-router-dom"
 import { urlImgage } from "../../../services/Api"
 import "./FilmCard.css"
 
-export const FilmCard = ({filmName, srcImage, filmOverview = null}) => {
+export const FilmCard = ({ filmId, filmName, srcImage, filmOverview = null }) => {
+
+
+    const navigate = useNavigate();
+
+
     return (
-        <div className="FilmCardDesign">
+
+        <div className="FilmCardDesign" onClick={() => navigate(`/film/${filmId}`)}>
             <img src={srcImage} />
 
             {
@@ -14,7 +21,7 @@ export const FilmCard = ({filmName, srcImage, filmOverview = null}) => {
 
 
                         <div className="black-screen"></div>
-                        
+
                         <div className="info-screen">
                             <span className="title-film">{filmName}</span>
 
@@ -26,14 +33,18 @@ export const FilmCard = ({filmName, srcImage, filmOverview = null}) => {
                             </p>
                         </div>
 
-                    
+
                     </>
-                    
 
 
-                    
+
+
                 )
             }
         </div>
+
+
+
+
     )
 }

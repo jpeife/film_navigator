@@ -5,6 +5,7 @@
     /* border: 0.1px solid black; */
     transition-duration: 400ms;
     position: relative;
+    color:white;
 }
 
 .FilmCardDesign:hover{

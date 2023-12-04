@@ -1,0 +1,19 @@
+
+
+.FilmImageGalleryDesign {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.3em;
+
+}
+
+.FilmImageGalleryItemDesign {
+
+    max-width: 30em;
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+}
+
+.FilmImageGalleryItemDesign img {
+    width: 100%;
+}

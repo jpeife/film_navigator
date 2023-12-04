@@ -1,0 +1,24 @@
+
+.FilmPageDesign {
+
+    display: grid;
+
+    grid-template-columns: 1fr 3fr;
+    column-gap: 1em;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+
+}
+
+.FilmPageDesign > div {
+    background-color: rgb(94, 89, 89);
+    color:white;
+    padding: 1em;
+    min-height: 1000px;
+    text-align: left;
+}
+
+
+.poster-img{
+    width: 20em;
+}
