@@ -1,10 +1,11 @@
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import "./FilmPage.css"
 import { useParams } from "react-router";
 import { getFilm, getFilmImages, getFilmVideos, urlImgage } from "../../services/Api";
 import { FilmImageGallery } from "../../common/FilmImageGallery/FilmImageGallery";
 import { FilmVideoGallery } from "../../common/FilmVideoGallery/FilmVideoGallery";
+import { BoxContainer } from "../../common/BoxContainer/BoxContainer";
 
 export const FilmPage = () => {
 
@@ -13,7 +14,9 @@ export const FilmPage = () => {
     const [film, setFilm] = useState(null);
     const [filmImages, setFilmImages] = useState(null);
     const [filmVideos, setFilmVideos] = useState(null);
-    
+
+    const mainBox = useRef();
+
 
     useEffect(() => {
 
@@ -46,67 +49,100 @@ export const FilmPage = () => {
             })
 
         getFilmVideos(id)
-        .then(response => {
-            console.log("videos", response);
+            .then(response => {
+                console.log("videos", response);
 
-            let videos = response.data.results.slice(0, 3);
-            setFilmVideos(videos);
-
-
+                let videos = response.data.results.slice(0, 3);
+                setFilmVideos(videos);
 
 
 
-        })
+
+
+            })
 
 
 
     }, [])
 
 
+    //Handle event of scroll
+    useEffect(() => {
+
+        window.addEventListener("scroll", onScrollProfile)
+
+        return (() => {
+            window.removeEventListener("scroll", onScrollProfile);
+        })
+
+    }, [])
+
+
+    const onScrollProfile = (event) => {
+        // console.log(event);
+
+        // console.log(window.scrollY);
+
+
+        if (window.scrollY > 150) {
+            mainBox.current.classList.add("on-scroll")
+            console.log("dentro")
+        } else {
+            mainBox.current.classList.remove("on-scroll")
+            console.log("fuera")
+        }
+
+
+
+    }
+
+
     return (
         <div className="FilmPageDesign">
 
 
-            <div className="">
+            <div className="" >
                 {
                     film &&
                     <>
-                        <h2>{film.title}</h2>
-                        <img className="poster-img" src={urlImgage(film.poster_path)} />
+                        <img className="poster-img" ref={mainBox} src={urlImgage(film.poster_path)} />
+
+                        <div className="film-details">
+
+                            <h2>{film.title}</h2>
+                            <p>{film.overview}</p>
+                        </div>
+
+
                     </>
                 }
 
             </div>
 
-            <div className="">
 
 
 
-                {
-                    film &&
-                    <>
-                        <h3>Sinopsis</h3>
-                        <hr />
-                        <p>{film.overview}</p>
+            {
+                film &&
+                <>
 
 
-                        <h3>Galería</h3>
-                        <hr />
+                    <BoxContainer title={"Galería"}>
                         <FilmImageGallery imageItems={filmImages} />
+                    </BoxContainer>
 
 
-                        <h3>Videos</h3>
-                        <hr />
+                    <BoxContainer title={"Videos"}>
                         <FilmVideoGallery videoItems={filmVideos} />
+                    </BoxContainer>
 
-                    </>
+                </>
 
-                }
-
-            </div>
-
+            }
 
         </div>
+
+
     )
 
 

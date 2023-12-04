@@ -1,24 +1,45 @@
 
 .FilmPageDesign {
 
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    position: sticky;
+    top: 1em;
 
-    grid-template-columns: 1fr 3fr;
-    column-gap: 1em;
+    /* grid-template-columns: 1fr 3fr; */
+    /* column-gap: 1em; */
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
 
 }
 
-.FilmPageDesign > div {
+.FilmPageDesign > div:first-child {
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+
+    background-color: rgb(132, 126, 126);
+}
+
+.FilmPageDesign > div.BoxContainerDesign {
     background-color: rgb(94, 89, 89);
     color:white;
     padding: 1em;
-    min-height: 1000px;
+    /* min-height: 1000px; */
     text-align: left;
 }
 
 
 .poster-img{
-    width: 20em;
+    width: 18em;
+    transition: 200ms;
+}
+
+.poster-img.on-scroll{
+    width: 8em;
+    transition-duration: 200ms;
 }

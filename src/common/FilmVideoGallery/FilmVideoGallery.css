@@ -1,9 +1,9 @@
 
 
 .FilmVideoGalleryDesign {
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.3em; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3em;
 
 }
 
