@@ -78,21 +78,13 @@ export const FilmPage = () => {
     }, [])
 
 
-    const onScrollProfile = (event) => {
-        // console.log(event);
-
-        // console.log(window.scrollY);
-
+    const onScrollProfile = () => {
 
         if (window.scrollY > 150) {
             mainBox.current.classList.add("on-scroll")
-            console.log("dentro")
         } else {
             mainBox.current.classList.remove("on-scroll")
-            console.log("fuera")
         }
-
-
 
     }
 
