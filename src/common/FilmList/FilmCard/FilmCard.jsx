@@ -6,14 +6,31 @@ export const FilmCard = ({filmName, srcImage, filmOverview = null}) => {
     return (
         <div className="FilmCardDesign">
             <img src={srcImage} />
-            <span className="title-film-box">{filmName}</span>
 
             {
                 filmOverview != null && (
 
-                    <div className="black-screen">
-                        <p>{filmOverview}</p>
-                    </div>
+                    <>
+
+
+                        <div className="black-screen"></div>
+                        
+                        <div className="info-screen">
+                            <span className="title-film">{filmName}</span>
+
+
+                            <p className="overview-film">
+                                {
+                                    filmOverview.lenght < 300 ? filmOverview : filmOverview.slice(0, 300) + "..."
+                                }
+                            </p>
+                        </div>
+
+                    
+                    </>
+                    
+
+
                     
                 )
             }

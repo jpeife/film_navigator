@@ -2,7 +2,7 @@
 .FilmListDesign{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    row-gap: 10px;
+    row-gap: 0px;
     column-gap: 5px;
 }
 
