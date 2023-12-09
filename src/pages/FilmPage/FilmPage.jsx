@@ -12,8 +12,8 @@ export const FilmPage = () => {
     const { id } = useParams();
 
     const [film, setFilm] = useState(null);
-    const [filmImages, setFilmImages] = useState(null);
-    const [filmVideos, setFilmVideos] = useState(null);
+    const [filmImages, setFilmImages] = useState([]);
+    const [filmVideos, setFilmVideos] = useState([]);
 
     const mainBox = useRef();
 
