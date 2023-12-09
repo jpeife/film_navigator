@@ -10,6 +10,7 @@ import { SearchPage } from "../SearchPage/SearchPage";
 import { LoadingSkin } from "../../common/LoadingSkin/LoadingSkin";
 import { useContext } from "react";
 import { ShowLoadingContext } from "../../App";
+import { ScrollTop } from "../../ScrollTop";
 
 
 export const Body = () => {
@@ -26,6 +27,8 @@ export const Body = () => {
             <BrowserRouter>
 
                 <LoadingSkin show={showLoading} />
+
+                <ScrollTop />
 
                 <Header />
 
