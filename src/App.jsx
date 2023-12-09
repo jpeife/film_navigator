@@ -5,17 +5,21 @@ import './App.css'
 import { Body } from './pages/Body/Body'
 
 export const SearchValueContext = createContext();
+export const ShowLoadingContext = createContext();
 
 function App() {
 
   const [searchValue, setSearchValue] = useState("")
+  const [showLoading, setShowLoading] = useState(false)
 
 
   return (
     <>
-      <SearchValueContext.Provider value={[searchValue, setSearchValue]}>
-        <Body />
-      </SearchValueContext.Provider>
+      <ShowLoadingContext.Provider value={[showLoading, setShowLoading]}>
+        <SearchValueContext.Provider value={[searchValue, setSearchValue]}>
+          <Body />
+        </SearchValueContext.Provider>
+      </ShowLoadingContext.Provider >
     </>
   )
 }
