@@ -1,16 +1,16 @@
 import { useEffect } from "react";
 import { useState } from "react"
 import { FilmList } from "../../common/FilmList/FilmList";
-import { getTopFilms } from "../../services/Api";
+import { getUpcomingFilms } from "../../services/Api";
 
 
-export const Home = () => {
+export const UpcomingFilmsPage = () => {
 
     const [films, setFilms] = useState([]);
 
 
     useEffect(() => {
-        getTopFilms().then(response => {
+        getUpcomingFilms().then(response => {
             console.log(response.data.results);
             setFilms(response.data.results)
         })
@@ -18,7 +18,7 @@ export const Home = () => {
 
     return (
         <div>
-            <h1>Películas mejor valoradas 🔥</h1>
+            <h1>Pronto disfrutaremos de ... 🤯</h1>
             <FilmList films={films} />
         </div>
     )

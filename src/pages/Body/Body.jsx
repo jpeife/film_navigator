@@ -4,6 +4,8 @@ import { Header } from "../../common/Header/Header"
 import { Home } from "../Home/Home";
 import "./Body.css";
 import { FilmPage } from "../FilmPage/FilmPage";
+import { LatestFilmsPage } from "../LatestFilmsPage/LatestFilmsPage";
+import { UpcomingFilmsPage } from "../UpcomingFilmsPage/UpcomingFilmsPage";
 
 
 export const Body = () => {
@@ -21,6 +23,8 @@ export const Body = () => {
                     
                     <Routes>
                         <Route path="/" element={<Home />} />
+                        <Route path="/latest" element={<LatestFilmsPage />} />
+                        <Route path="/upcoming" element={<UpcomingFilmsPage />} />
                         <Route path="/film/:id" element={<FilmPage />} />
                     </Routes>
                     

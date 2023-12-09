@@ -10,7 +10,8 @@ export const Header = () => {
             
             <nav>
                 <Link to="/">Inicio</Link>
-                <Link to="/">Otra</Link>
+                <Link to="/latest">Las más nuevas</Link>
+                <Link to="/upcoming">Las más esperadas</Link>
             </nav>
 
             <SearchFilmBar />

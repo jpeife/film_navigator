@@ -11,9 +11,21 @@ export const urlImgage = (imageName) => {
 }
 
 
-export const getLatestFilms = async () => {
+export const getTopFilms = async () => {
 
     return await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${APIKEY}`);
+    
+}
+
+export const getLatestFils = async () => {
+
+    return await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${APIKEY}`);
+
+}
+
+export const getUpcomingFilms = async () => {
+
+    return await axios.get(`https://api.themoviedb.org/3/movie/upcoming?api_key=${APIKEY}`);
 
 }
 
