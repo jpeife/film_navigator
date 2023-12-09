@@ -26,7 +26,12 @@ export const getLatestFils = async () => {
 export const getUpcomingFilms = async () => {
 
     return await axios.get(`https://api.themoviedb.org/3/movie/upcoming?api_key=${APIKEY}`);
+    
+}
 
+export const getFilmsByNameSearch = async (searchText) => {
+    
+    return await axios.get(`https://api.themoviedb.org/3/search/movie?query=${searchText}&api_key=${APIKEY}`);
 }
 
 

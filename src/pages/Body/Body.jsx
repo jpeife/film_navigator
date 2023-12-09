@@ -6,6 +6,7 @@ import "./Body.css";
 import { FilmPage } from "../FilmPage/FilmPage";
 import { LatestFilmsPage } from "../LatestFilmsPage/LatestFilmsPage";
 import { UpcomingFilmsPage } from "../UpcomingFilmsPage/UpcomingFilmsPage";
+import { SearchPage } from "../SearchPage/SearchPage";
 
 
 export const Body = () => {
@@ -26,6 +27,7 @@ export const Body = () => {
                         <Route path="/latest" element={<LatestFilmsPage />} />
                         <Route path="/upcoming" element={<UpcomingFilmsPage />} />
                         <Route path="/film/:id" element={<FilmPage />} />
+                        <Route path="/search" element={<SearchPage />} />
                     </Routes>
                     
                 </div>

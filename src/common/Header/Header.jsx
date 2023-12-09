@@ -12,6 +12,7 @@ export const Header = () => {
                 <Link to="/">Inicio</Link>
                 <Link to="/latest">Las más nuevas</Link>
                 <Link to="/upcoming">Las más esperadas</Link>
+                <Link to="/search">Buscar</Link>
             </nav>
 
             <SearchFilmBar />
