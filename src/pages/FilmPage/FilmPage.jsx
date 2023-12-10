@@ -2,10 +2,12 @@
 import { useEffect, useRef, useState } from "react"
 import "./FilmPage.css"
 import { useParams } from "react-router";
-import { getFilm, getFilmImages, getFilmVideos, urlImgage } from "../../services/Api";
+import { getFilm, getFilmImages, getFilmVideos, getSimilarFilms, urlImgage } from "../../services/Api";
 import { FilmImageGallery } from "../../common/FilmImageGallery/FilmImageGallery";
 import { FilmVideoGallery } from "../../common/FilmVideoGallery/FilmVideoGallery";
 import { BoxContainer } from "../../common/BoxContainer/BoxContainer";
+import { FilmList } from "../../common/FilmList/FilmList";
+import { Badge } from "../../common/Badge/Badge";
 
 export const FilmPage = () => {
 
@@ -14,6 +16,7 @@ export const FilmPage = () => {
     const [film, setFilm] = useState(null);
     const [filmImages, setFilmImages] = useState([]);
     const [filmVideos, setFilmVideos] = useState([]);
+    const [similarFilms, setSimilarFilms] = useState([]);
 
     const mainBox = useRef();
 
@@ -36,7 +39,7 @@ export const FilmPage = () => {
 
         getFilmImages(id)
             .then(response => {
-                console.log(response)
+                console.log("listado de imagenes", response.data)
 
 
                 let images = response.data.backdrops.slice(0, 10).map((item) => {
@@ -59,6 +62,13 @@ export const FilmPage = () => {
 
 
 
+            })
+
+
+        getSimilarFilms(id)
+            .then((response) => {
+                console.log("similar films", response.data.results)
+                setSimilarFilms(response.data.results.slice(0, 10));
             })
 
 
@@ -93,16 +103,54 @@ export const FilmPage = () => {
         <div className="FilmPageDesign">
 
 
-            <div className="" >
+            <div className="film-main-box" ref={mainBox}>
                 {
                     film &&
                     <>
-                        <img className="poster-img" ref={mainBox} src={urlImgage(film.poster_path)} />
+                        <img className="poster-img" src={urlImgage(film.poster_path)} />
 
                         <div className="film-details">
 
-                            <h2>{film.title}</h2>
+
+                            
+
+                            <h1>
+                                {film.title} ({(new Date(film.release_date)).getFullYear()})
+
+
+                               
+
+                            </h1>
+
+
+                            <h3>⭐{film.vote_average}</h3>
+
+
+                            <div className="genre_list">
+                                {
+                                    film.genres.map((genre) => {
+                                        return <Badge text={genre.name} className={"primary"} />
+                                    })
+                                }
+                            </div>
+
                             <p>{film.overview}</p>
+
+                            <div className="more-details">
+
+
+                                <span>Estreno: {new Date(film.release_date).toLocaleDateString()}</span>
+                                <span>Duración: {film.runtime} min.</span>
+
+
+
+
+                            </div>
+
+
+
+
+
                         </div>
 
 
@@ -126,6 +174,15 @@ export const FilmPage = () => {
 
                     <BoxContainer title={"Videos"}>
                         <FilmVideoGallery videoItems={filmVideos} />
+                    </BoxContainer>
+
+
+                    <BoxContainer title={"Películas similares"}>
+
+                        <FilmList films={similarFilms} />
+
+
+
                     </BoxContainer>
 
                 </>

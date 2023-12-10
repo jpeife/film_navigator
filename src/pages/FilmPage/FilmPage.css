@@ -14,9 +14,11 @@
 
 }
 
-.FilmPageDesign > div:first-child {
+.film-main-box {
     position: sticky;
     top: 0;
+
+    text-align: left;
 
     display: flex;
     flex-direction: row;
@@ -25,21 +27,44 @@
     background-color: rgb(132, 126, 126);
 }
 
+
+
+
+
 .FilmPageDesign > div.BoxContainerDesign {
     background-color: rgb(94, 89, 89);
     color:white;
     padding: 1em;
-    /* min-height: 1000px; */
-    text-align: left;
 }
 
 
 .poster-img{
     width: 18em;
     transition: 200ms;
+    object-fit: cover;
 }
 
-.poster-img.on-scroll{
+.film-main-box.on-scroll .poster-img{
     width: 8em;
+    
     transition-duration: 200ms;
+}
+
+
+.genre_list {
+    display: inline-flex;
+    gap: 0.5em;
+}
+
+
+
+
+.more-details {
+    display: flex;
+    flex-direction: column;
+    gap:0.5em;
+}
+
+.film-main-box.on-scroll .more-details {
+    display: none;
 }

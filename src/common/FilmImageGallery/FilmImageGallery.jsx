@@ -10,7 +10,7 @@ export const FilmImageGallery = ({ imageItems = [] }) => {
             {
                 imageItems.map(item => {
                     return (
-                        <div className="FilmImageGalleryItemDesign">
+                        <div key={item} className="FilmImageGalleryItemDesign">
                             <img src={item} />
                         </div>
                     )

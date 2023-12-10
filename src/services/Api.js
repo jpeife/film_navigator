@@ -35,6 +35,12 @@ export const getFilmsByNameSearch = async (searchText) => {
 }
 
 
+export const getSimilarFilms = async (filmId) => {
+    
+    return await axios.get(`https://api.themoviedb.org/3/movie/${filmId}/similar?api_key=${APIKEY}`);
+}
+
+
 export const getFilm = async (filmId) => {
 
     return await axios.get(`https://api.themoviedb.org/3/movie/${filmId}?api_key=${APIKEY}`)

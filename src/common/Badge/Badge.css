@@ -1,0 +1,29 @@
+
+
+.BadgeDesign{
+    text-align: center;
+    padding: 0.5em 0.7em;
+
+    border-radius: 0.5em;
+    display: inline;
+
+    
+}
+
+
+.BadgeDesign.primary {
+    background-color: rgb(23, 104, 103);
+}
+
+.BadgeDesign.warning {
+    background-color: rgb(219, 132, 70);
+}
+
+.BadgeDesign.danger {
+    background-color: rgb(161, 28, 28);
+}
+
+.BadgeDesign.info {
+    background-color: rgb(61, 158, 82);
+}
+
