@@ -1,9 +1,10 @@
 
 .FilmListDesign{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(15em, auto));
     row-gap: 0px;
     column-gap: 5px;
+    
 }
 
 /* .FilmListDesign .FilmCardDesign:nth-child(1){

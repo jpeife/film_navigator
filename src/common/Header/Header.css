@@ -8,8 +8,9 @@ a {
     justify-content: center;
     align-items: center;
 
-    /* font-family: 'Nova Square'; */
-
+    flex-wrap: wrap;
+    row-gap: 2em;
+    column-gap: 1em;
 
     background-color: gray;
     min-height: 6em;
@@ -22,6 +23,7 @@ a {
     display: flex;
     gap: 3em;
     flex-grow: 1;
+    justify-content: center;
 }
 
 
