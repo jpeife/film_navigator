@@ -11,6 +11,7 @@ import { LoadingSkin } from "../../common/LoadingSkin/LoadingSkin";
 import { useContext } from "react";
 import { ShowLoadingContext } from "../../App";
 import { ScrollTop } from "../../ScrollTop";
+import { ImageViewerSkin } from "../../common/ImageViewerSkin/ImageViewerSkin";
 
 
 export const Body = () => {
@@ -25,6 +26,9 @@ export const Body = () => {
 
 
             <BrowserRouter>
+
+                <ImageViewerSkin />
+
 
                 <LoadingSkin show={showLoading} />
 

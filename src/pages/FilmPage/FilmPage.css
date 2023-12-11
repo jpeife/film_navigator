@@ -24,6 +24,8 @@
     flex-direction: row;
     gap: 2em;
 
+    padding-right: 2em;
+
     background-color: rgb(132, 126, 126);
 }
 
@@ -46,6 +48,7 @@
 
 .film-main-box.on-scroll .poster-img{
     width: 8em;
+    object-fit: scale-down;
     
     transition-duration: 200ms;
 }
@@ -56,6 +59,10 @@
     gap: 0.5em;
 }
 
+
+.film-details{
+    flex-grow: 1;
+}
 
 
 

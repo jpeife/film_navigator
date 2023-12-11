@@ -114,25 +114,29 @@ export const FilmPage = () => {
 
                             
 
-                            <h1>
+                            <h2 style={{marginBottom: "0"}}>
                                 {film.title} ({(new Date(film.release_date)).getFullYear()})
+                            </h2>
 
+                            <div className="" style={{display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "baseline", gap: ""}}>
 
-                               
+                                <div className="genre_list">
+                                    {
+                                        film.genres.map((genre) => {
+                                            return <Badge text={genre.name} className={"primary"} />
+                                        })
+                                    }
+                                </div>
 
-                            </h1>
+                                <h3>⭐{film.vote_average}</h3>
 
-
-                            <h3>⭐{film.vote_average}</h3>
-
-
-                            <div className="genre_list">
-                                {
-                                    film.genres.map((genre) => {
-                                        return <Badge text={genre.name} className={"primary"} />
-                                    })
-                                }
                             </div>
+
+                          
+
+                           
+
+
 
                             <p>{film.overview}</p>
 
