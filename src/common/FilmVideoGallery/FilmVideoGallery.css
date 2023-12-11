@@ -1,15 +1,15 @@
 
 
 .FilmVideoGalleryDesign {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15em, auto));
+    gap: 0.3em;
 
 }
 
 .FilmVideoGalleryItemDesign {
 
-    max-width: 30em;
+    /* max-width: 30em; */
     /* border: 1px solid black; */
     box-sizing: border-box;
 }

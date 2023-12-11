@@ -14,8 +14,8 @@ export const FilmVideoGallery = ({ videoItems = [] }) => {
 
 
                             <iframe
-                                width="560"
-                                height="315"
+                                // width="560"
+                                // height="315"
                                 // src="https://www.youtube.com/embed/BeK7XZMm-4Q?si=35F0L7dJOd7LGZJt"
                                 src={`https://www.youtube.com/embed/${item.id}?si=${item.id}`}
                                 title="YouTube video player"

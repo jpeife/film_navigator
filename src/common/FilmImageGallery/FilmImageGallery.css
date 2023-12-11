@@ -2,7 +2,7 @@
 
 .FilmImageGalleryDesign {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(15em, auto));
     gap: 0.3em;
 
 }
