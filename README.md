@@ -1,8 +1,16 @@
-# React + Vite
+# FILM NAVIGATOR
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto para la visualización de listado de películas, nutríendose de la API de MDBM.
 
-Currently, two official plugins are available:
+Tiene un listado de las películas más populares, las más recientes, y las que se estrenarán próximamente.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Ejecución del proyecto 
+
+`npm run dev`
+
+
+## Features pendientes
+- [x] Responsive para diversos dispositivos
+- [ ] Infinity page en los diferentes apartados
+- [ ] Una modal para los videos dentro de las películas
+- [ ] Corregir y mejorar el buscador. Añadir búsqueda por generos
