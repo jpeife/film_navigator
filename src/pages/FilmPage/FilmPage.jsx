@@ -91,12 +91,13 @@ export const FilmPage = () => {
     const onScrollProfile = () => {
 
 
-        
-        console.log("cambio scroll", window.scrollY)
 
-        if (window.scrollY > 150) {
+        console.log(window.scrollY)
+
+        if (window.scrollY > 200) {
             mainBox.current.classList.add("on-scroll")
-        } else {
+        } 
+        if (window.scrollY <= 0){
             mainBox.current.classList.remove("on-scroll")
         }
 
@@ -122,7 +123,7 @@ export const FilmPage = () => {
                                 {film.title} ({(new Date(film.release_date)).getFullYear()})
                             </h2>
 
-                            <div className="" style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "baseline", gap: ""}}>
+                            <div className="" style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "baseline", gap: "", flexWrap: "wrap"}}>
 
                                 <div className="genre_list">
                                     {

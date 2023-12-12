@@ -12,7 +12,7 @@ export const FilmCard = ({ filmId, filmName, srcImage, filmOverview = null }) =>
     return (
 
         <div className="FilmCardDesign" onClick={() => navigate(`/film/${filmId}`)}>
-            <img src={srcImage} />
+            <img src={srcImage} onError={(e) => e.target.src = "/default_movie.jpg"} />
 
             {
                 filmOverview != null && (
