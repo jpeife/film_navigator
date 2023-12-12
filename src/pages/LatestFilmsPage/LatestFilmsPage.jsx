@@ -3,7 +3,7 @@ import { useState } from "react"
 import { FilmList } from "../../common/FilmList/FilmList";
 import { getLatestFils } from "../../services/Api";
 import { ShowLoadingContext } from "../../App";
-
+import "./LatestFilmsPage.css"
 
 export const LatestFilmsPage = () => {
 
@@ -26,7 +26,7 @@ export const LatestFilmsPage = () => {
     
 
     return (
-        <div>
+        <div className="LatestFilmsPageDesign">
             <h1>Recien sacadas del horno🆕‼</h1>
             <FilmList films={films} />
         </div>

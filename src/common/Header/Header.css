@@ -21,7 +21,13 @@ a {
 
 .HeaderDessign nav{
     display: flex;
+    flex-wrap: wrap;
     gap: 3em;
+
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10em, auto)); */
+
+
     flex-grow: 1;
     justify-content: center;
 }

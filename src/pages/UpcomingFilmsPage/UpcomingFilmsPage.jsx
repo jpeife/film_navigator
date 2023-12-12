@@ -3,6 +3,7 @@ import { useState } from "react"
 import { FilmList } from "../../common/FilmList/FilmList";
 import { getUpcomingFilms } from "../../services/Api";
 import { ShowLoadingContext } from "../../App";
+import "./UpcomingFilmsPage.css"
 
 
 export const UpcomingFilmsPage = () => {
@@ -26,8 +27,8 @@ export const UpcomingFilmsPage = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Pronto disfrutaremos de ... 🤯</h1>
+        <div className="UpcomingFilmsPageDesign">
+            <h1> En breves tendremos...  🤯</h1>
             <FilmList films={films} />
         </div>
     )

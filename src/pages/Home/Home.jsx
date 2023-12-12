@@ -3,6 +3,7 @@ import { useState } from "react"
 import { FilmList } from "../../common/FilmList/FilmList";
 import { getTopFilms } from "../../services/Api";
 import { ShowLoadingContext } from "../../App";
+import "./Home.css"
 
 
 export const Home = () => {
@@ -25,7 +26,7 @@ export const Home = () => {
     }, []);
 
     return (
-        <div>
+        <div className="HomeDesign">
             <h1>Películas mejor valoradas 🔥</h1>
             <FilmList films={films} />
         </div>
