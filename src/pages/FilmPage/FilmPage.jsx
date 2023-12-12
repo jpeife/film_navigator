@@ -30,6 +30,10 @@ export const FilmPage = () => {
 
                 console.log(result.data);
                 setFilm(result.data);
+
+                document.title = result.data.title
+
+
             })
             .catch((error) => {
                 console.log(error);
@@ -81,9 +85,13 @@ export const FilmPage = () => {
 
         window.addEventListener("scroll", onScrollProfile)
 
+        
+
+
         return (() => {
             window.removeEventListener("scroll", onScrollProfile);
         })
+
 
     }, [])
 
